@@ -39,12 +39,21 @@ All regular expressions share the same starting `^` and ending `$` anchor of a s
 
 Word Boundary `\b` and Non-word Boundary `\B`:
 
-* `\b` The match has to occur on a boundary between a word character and a non-word character. (Word characters consist of alphanumeric characters and underscores)
+* `\b`: The match has to occur on a boundary between a word character and a non-word character. (Word characters consist of alphanumeric characters and underscores)
 * `\B` This is the opposite of the `\b` anchor, it specifies that the match must not occur on a word boundary.
+
+The ones used for this expression are `^` start and `$` end.
 
 ### Quantifiers
 
+There are four types of quantifiers `+, *, ? and {n}`. For the sample expression used in this tutorial we only use `+ and {n}`:
 
+* `{n}` This is the simplest quantifier, it's a number in a curly brace. Quantifiers are appended to characters to specify how many are needed.
+    * For this Regex we use `{2,6}` this means that we are looking for a sequence of characters that are 2 characters long but not longer than 6.
+
+* `+` Has at least one match with the preceding item "x".
+    * In our expression `([a-z0-9_\.-]+)` we use the `+` quantifier to match a character that is between `a to z` and/or a number `0 to ∞` used in the first part of an email before the "@".
+    * The same applies for `([\da-z\.-]+)` part that comes after the "@" e.g.: `...@gmail`.
 
 ### OR Operator
 
