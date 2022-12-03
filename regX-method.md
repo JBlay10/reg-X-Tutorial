@@ -39,7 +39,7 @@ All regular expressions share the same starting `^` and ending `$` anchor of a s
 
 Word Boundary `\b` and Non-word Boundary `\B`:
 
-* `\b`: The match has to occur on a boundary between a word character and a non-word character. (Word characters consist of alphanumeric characters and underscores)
+* `\b` The match has to occur on a boundary between a word character and a non-word character. (Word characters consist of alphanumeric characters and underscores)
 * `\B` This is the opposite of the `\b` anchor, it specifies that the match must not occur on a word boundary.
 
 The ones used for this expression are `^` start and `$` end.
@@ -56,6 +56,18 @@ There are four types of quantifiers `+, *, ? and {n}`. For the sample expression
     * The same applies for `([\da-z\.-]+)` part that comes after the "@" e.g.: `...@gmail`.
 
 ### OR Operator
+
+The Or Operator aka Alternation in regex it is represented by a vertical line `|`. In our expression the `|` is not in use.
+* I've provide an example below to see how it works:
+```
+let regexp = /html|php|css|java(script)?/gi;
+
+let str = "First HTML appeared, then CSS, then JavaScript";
+
+alert( str.match(regexp) );
+```
+- 
+
 
 ### Character Classes
 
